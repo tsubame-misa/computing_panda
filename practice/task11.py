@@ -16,7 +16,6 @@ def calc_delta(x, weight=1):
 
 def calc_a(x, d):
     delta = calc_delta(x)
-    print(delta)
 
     delta_d = 0
     for i in range(3):
@@ -37,16 +36,10 @@ eps = 1e-6
 k = 0
 x_k = [0, 1, 2]
 while not calc_delta_norm(x_k) <= eps:
-    print("norm", calc_delta_norm(x_k))
     d_k = calc_delta(x_k, -1)
-    print("d_k", d_k)
     a = calc_a(x_k, d_k)
-    print("a", a)
-    x_k1 = [x_k[i]+a*d_k[i] for i in range(3)]
-    print("x", x_k1)
-    x_k = x_k1
+    x_k = [x_k[i]+a*d_k[i] for i in range(3)]
     k += 1
-    print()
 
 print("fin -------------------")
 print("norm", calc_delta_norm(x_k))
