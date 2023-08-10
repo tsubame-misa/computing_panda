@@ -5,6 +5,7 @@ import setup
 
 
 def calc_score(graph, pos, node2num):
+    # きっとこれに差し替えるべき
     UNIT_EDGE_LENGTH = setup.get_edge_width()
     d = dict(nx.all_pairs_dijkstra_path_length(
         graph, weight=lambda u, v, e: UNIT_EDGE_LENGTH))

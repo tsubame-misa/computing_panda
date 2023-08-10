@@ -36,8 +36,8 @@ def create_and_save_graph(graph, pos, node_color, edge_color, alg_dir_name, name
     G.add_edges_from(graph.edges)
 
     plt.figure(figsize=(12, 12))
-    nx.draw_networkx(G, pos, False,
-                     node_color=node_color, edge_color=edge_color, node_size=50, font_size=5)
+    nx.draw_networkx(G, pos, False, with_labels=False,
+                     node_color=node_color, edge_color=edge_color, node_size=2, linewidths=0.5, label=None)
 
     dir_name = setup.get_dir_name()
 
